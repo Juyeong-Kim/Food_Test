@@ -8,6 +8,12 @@ body {
 }
 
 @font-face {
+  font-family: "NotoSansKR-Black";
+  font-weight: bold;
+  src: url("./assets/fonts/NotoSansKR-Bold.otf") format("truetype");
+}
+
+@font-face {
   font-family: "NotoSansKR-Bold";
   font-weight: bold;
   src: url("./assets/fonts/NotoSansKR-Bold.otf") format("truetype");
@@ -15,7 +21,7 @@ body {
 
 @font-face {
   font-family: "NotoSansKR-Light";
-  font-weight: lighter;
+  font-weight: normal;
   src: url("./assets/fonts/NotoSansKR-Bold.otf") format("truetype");
 }
 
@@ -24,6 +30,19 @@ body {
   font-weight: normal;
   src: url("./assets/fonts/NotoSansKR-Bold.otf") format("truetype");
 }
+
+@font-face {
+  font-family: "NotoSansKR-Regular";
+  font-weight: normal;
+  src: url("./assets/fonts/NotoSansKR-Bold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "NotoSansKR-Thin";
+  font-weight: normal;
+  src: url("./assets/fonts/NotoSansKR-Bold.otf") format("truetype");
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

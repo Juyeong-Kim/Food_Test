@@ -1,5 +1,7 @@
 import React from "react";
+import styled from "styled-components";
 import Header from "../components/Header";
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const RESULT_LIST = [
@@ -42,20 +44,91 @@ export default class Result extends React.Component {
 
   renderResult = (item) => {
     return (
-      <div className="result">
-        <div className="result__header">
+      <ResultContainer>
+        <HeadContainer>
           <Header />
-          <span className="title__text">{item.title}</span>
-        </div>
-        <div className="result__body">
-          <div className="result__contents">
-            <span className="contents__text">{item.content}</span>
-          </div>
+          <TitleContainer>
+            <TitleText>{item.title}</TitleText>
+          </TitleContainer>
+        </HeadContainer>
+        <BodyContainer>
+          <FaQuoteLeft size={60} style={{ color: "#ffffff" }} />
+          <ContentsContainer>
+            <ContentsText>{item.content}</ContentsText>
+          </ContentsContainer>
+          <FaQuoteRight size={60} style={{ color: "#ffffff" }} />
           <Link to="/">
-            <button>처음으로</button>
+            <GoHomeButton>처음으로</GoHomeButton>
           </Link>
-        </div>
-      </div>
+        </BodyContainer>
+      </ResultContainer>
     );
   };
 }
+
+// ResultStyle
+
+const ResultContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33vw;
+  height: 100vh;
+`;
+
+const HeadContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 30%;
+`;
+
+const TitleContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70%;
+`;
+
+const TitleText = styled.span`
+  font-family: NotoSansKR-Medium;
+  font-size: 30px;
+`;
+
+const BodyContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+  border-radius: 50px 50px 0px 0px / 50px 50px 0px 0px;
+  background-color: #3ab9fc;
+`;
+
+const ContentsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 70%;
+`;
+
+const ContentsText = styled.span`
+  align-self: flex-start;
+  font-family: NotoSansKR-Bold;
+  font-size: 30px;
+  color: #ffffff;
+`;
+
+const GoHomeButton = styled.button`
+  width: 100%;
+  border: 0px;
+  border-radius: 50px;
+  background-color: #ffffff;
+  font-family: NotoSansKR-Light;
+  font-weight: normal;
+  font-size: 35px;
+  cursor: pointer;
+`;

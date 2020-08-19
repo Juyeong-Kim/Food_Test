@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import Header from "../components/Header";
 import ProgressBar from "../components/ProgressBar";
 
@@ -30,53 +31,56 @@ export default class Test extends React.Component {
     super(props);
     this.state = {
       questionIndex: 0,
+      questionLength: QUESTION_LIST.length,
     };
     this.score = 0;
   }
 
   render() {
     return (
-      <div className="test">
+      <TopContainer>
         <Header />
-        <ProgressBar />
-        <div className="test__question">
-          <span className="question__text">
-            {QUESTION_LIST[this.state.questionIndex]}
-          </span>
-        </div>
-        <div className="test__answer">
-          <div className="answer__box__1st">
-            <span
-              className="answer__text"
-              onClick={() => {
-                this.onClickAnswer(1);
-              }}
-            >
-              2일 이하
-            </span>
-          </div>
-          <div className="answer__box__2nd">
-            <span
-              className="answer__text"
-              onClick={() => {
-                this.onClickAnswer(2);
-              }}
-            >
-              3~5일
-            </span>
-          </div>
-          <div className="answer__box__3rd">
-            <span
-              className="answer__text"
-              onClick={() => {
-                this.onClickAnswer(3);
-              }}
-            >
-              6일~7일
-            </span>
-          </div>
-        </div>
-      </div>
+        <ProgressBar
+          questionIndex={this.state.questionIndex}
+          questionLength={this.state.questionLength}
+        />
+        <TestContainer>
+          <QuestionContainer>
+            <QuestionText>
+              {QUESTION_LIST[this.state.questionIndex]}
+            </QuestionText>
+          </QuestionContainer>
+          <AnswerContainer>
+            <AnswerBox>
+              <AnswerText
+                onClick={() => {
+                  this.onClickAnswer(1);
+                }}
+              >
+                2일 이하
+              </AnswerText>
+            </AnswerBox>
+            <AnswerBox>
+              <AnswerText
+                onClick={() => {
+                  this.onClickAnswer(2);
+                }}
+              >
+                3일~5일
+              </AnswerText>
+            </AnswerBox>
+            <AnswerBox>
+              <AnswerText
+                onClick={() => {
+                  this.onClickAnswer(3);
+                }}
+              >
+                6일~7일
+              </AnswerText>
+            </AnswerBox>
+          </AnswerContainer>
+        </TestContainer>
+      </TopContainer>
     );
   }
 
@@ -111,3 +115,64 @@ export default class Test extends React.Component {
     }
   };
 }
+
+// TestStyled
+
+const TopContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33vw;
+  height: 100vh;
+  background-color: #3ab9fc;
+`;
+
+const TestContainer = styled.div`
+  display: "flex";
+  flex-direction: column;
+  width: 100%;
+  height: 78%;
+  border-radius: 50px 50px 0px 0px / 50px 50px 0px 0px;
+  background-color: #ffffff;
+`;
+
+const QuestionContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 30%;
+  margin: 0 auto;
+  text-align: center;
+`;
+
+const QuestionText = styled.span`
+  font-family: NotoSansKR-Bold;
+  font-size: 25px;
+`;
+
+const AnswerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 60%;
+`;
+
+const AnswerBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 20%;
+  border-radius: 100px;
+  border: solid 3px #ffdd33;
+  cursor: pointer;
+  word-break: break-all;
+`;
+
+const AnswerText = styled.span`
+  font-family: NotoSansKR-Medium;
+  font-size: 20px;
+`;
