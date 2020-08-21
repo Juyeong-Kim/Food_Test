@@ -16,7 +16,7 @@ export default class Home extends React.Component {
           <TitleBorder></TitleBorder>
         </TitleContainer>
         <ButtonContainer>
-          <Link to="/test">
+          <Link style={linkStyle} to="/test">
             <StartButton>시작</StartButton>
           </Link>
         </ButtonContainer>
@@ -25,15 +25,20 @@ export default class Home extends React.Component {
   }
 }
 
+const linkStyle = {
+  width: "250px",
+  height: "80px",
+};
+
 // HomeStyled
 
 const HomeContainer = styled.div`
   display: flex;
-  width: 33vw;
-  height: 100vh;
+  width: 600px;
+  height: 1080px;
   position: relative;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   background-image: url(${require("../assets/images/homeImage.jpg")});
   background-size: cover;
@@ -46,8 +51,8 @@ const GrayScale = styled.div`
   left: 0;
   background-color: black;
   opacity: 0.2;
-  width: 100%;
-  height: 100%;
+  width: 600px;
+  height: 1080px;
   z-index: 0;
 `;
 
@@ -55,8 +60,8 @@ const HomeLogoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 15%;
+  width: 600px;
+  height: 216px;
   z-index: 1;
 `;
 
@@ -70,10 +75,10 @@ const HomeLogo = styled.span`
 const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 15%;
+  width: 600px;
+  height: 216px;
   z-index: 1;
 `;
 
@@ -81,28 +86,33 @@ const TitleText = styled.span`
   color: #ffffff;
   font-family: NotoSansKR-Light;
   font-weight: lighter;
-  font-size: 50px;
+  font-size: 40px;
 `;
 
 const TitleBorder = styled.div`
-  border: solid 4 px #ffffff;
+  width: 420px;
+  border: solid 3px #ffffff;
+  margin: 12px;
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  width: 100%;
-  height: 15%;
+  align-items: center;
+  width: 600px;
+  height: 216px;
   z-index: 1;
 `;
 
 const StartButton = styled.button`
-  width: 100%;
+  width: 250px;
+  height: 80px;
   border: 0px;
   border-radius: 50px;
   background-color: #ffffff;
   font-family: NotoSansKR-Light;
   font-weight: normal;
   font-size: 35px;
+  color: #bcc0c2;
   cursor: pointer;
 `;

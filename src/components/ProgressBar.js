@@ -25,8 +25,9 @@ export default class ProgressBar extends React.Component {
 // Styled
 
 const Progressbar = styled.div`
-  width: 80%;
-  height: 15%;
+  width: 480px;
+  height: 200px;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
   align-items: center;

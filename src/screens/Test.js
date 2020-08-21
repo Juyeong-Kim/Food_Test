@@ -51,32 +51,26 @@ export default class Test extends React.Component {
             </QuestionText>
           </QuestionContainer>
           <AnswerContainer>
-            <AnswerBox>
-              <AnswerText
-                onClick={() => {
-                  this.onClickAnswer(1);
-                }}
-              >
-                2일 이하
-              </AnswerText>
+            <AnswerBox
+              onClick={() => {
+                this.onClickAnswer(1);
+              }}
+            >
+              <AnswerText>2일 이하</AnswerText>
             </AnswerBox>
-            <AnswerBox>
-              <AnswerText
-                onClick={() => {
-                  this.onClickAnswer(2);
-                }}
-              >
-                3일~5일
-              </AnswerText>
+            <AnswerBox
+              onClick={() => {
+                this.onClickAnswer(2);
+              }}
+            >
+              <AnswerText>3일~5일</AnswerText>
             </AnswerBox>
-            <AnswerBox>
-              <AnswerText
-                onClick={() => {
-                  this.onClickAnswer(3);
-                }}
-              >
-                6일~7일
-              </AnswerText>
+            <AnswerBox
+              onClick={() => {
+                this.onClickAnswer(3);
+              }}
+            >
+              <AnswerText>6일~7일</AnswerText>
             </AnswerBox>
           </AnswerContainer>
         </TestContainer>
@@ -122,16 +116,16 @@ const TopContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 33vw;
-  height: 100vh;
+  width: 600px;
+  height: 1080px;
   background-color: #3ab9fc;
 `;
 
 const TestContainer = styled.div`
   display: "flex";
   flex-direction: column;
-  width: 100%;
-  height: 78%;
+  width: 600px;
+  height: 840px;
   border-radius: 50px 50px 0px 0px / 50px 50px 0px 0px;
   background-color: #ffffff;
 `;
@@ -140,8 +134,8 @@ const QuestionContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  height: 30%;
+  width: 480px;
+  height: 250px;
   margin: 0 auto;
   text-align: center;
 `;
@@ -156,16 +150,16 @@ const AnswerContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
-  height: 60%;
+  width: 600px;
+  height: 450px;
 `;
 
 const AnswerBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70%;
-  height: 20%;
+  width: 420px;
+  height: 90px;
   border-radius: 100px;
   border: solid 3px #ffdd33;
   cursor: pointer;
