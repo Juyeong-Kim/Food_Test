@@ -41,8 +41,7 @@ export default class Test extends React.Component {
   }
 
   render() {
-    const index = QUESTION_LIST.index;
-    const answerItem = this.getAnswer(index);
+    const answerItem = this.getAnswer(this.state.questionIndex);
     return <div className="get__test">{this.renderTest(answerItem)}</div>;
   }
 
