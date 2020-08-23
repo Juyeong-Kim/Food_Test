@@ -9,19 +9,19 @@ const RESULT_LIST = [
     title: "나쁜 편",
     content:
       "나쁜 식습관은 만성질병을 일으킬 수 있습니다. 식사지침의 키포인트를 항상 염두에 두시어 생활하시길 바라며, 식생활 전문가와 상담하시길 권장합니다.",
-    image: "../assets/images/resultFirst.jpg",
+    image: require("../assets/images/resultFirst.jpg"),
   },
   {
     title: "보통",
     content:
       "좋은 식습관도 있지만 그렇지 않은 부분도 있습니다. 더 좋은 식생활을 위해 노력이 필요하며 식사지침의 키포인트를 항상 염두에 두시어 생활하시길 바랍니다.",
-    image: "../assets/images/resultSecond.jpg",
+    image: require("../assets/images/resultSecond.jpg"),
   },
   {
     title: "좋은 편",
     content:
       "현재와 같은 식습관을 유지하시고 식사지침의 키포인트를 항상 염두에 두시어 생활하시길 바랍니다.",
-    image: "../assets/images/resultThird.jpg",
+    image: require("../assets/images/resultThird.jpg"),
   },
 ];
 
@@ -90,13 +90,13 @@ const HeadContainer = styled.div`
   align-items: center;
   position: relative;
   width: 600px;
-  height: 320px;
+  height: 30%;
 `;
 
-const BackgroundImage = styled.image`
+const BackgroundImage = styled.img`
   position: absolute;
   width: 600px;
-  height: 320px;
+  height: 100%;
   z-index: 0;
 `;
 
@@ -105,7 +105,7 @@ const GrayScale = styled.div`
   position: absolute;
   opacity: 0.2;
   width: 600px;
-  height: 320px;
+  height: 100%;
   z-index: 1;
 `;
 
@@ -115,7 +115,7 @@ const TitleContainer = styled.div`
   align-items: flex-end;
   position: relative;
   width: 600px;
-  height: 210px;
+  height: 120px;
   z-index: 2;
   text-align: center;
 `;
@@ -139,7 +139,7 @@ const BodyContainer = styled.div`
   position: absolute;
   bottom: 0;
   width: 600px;
-  height: 750px;
+  height: 75%;
   border-radius: 50px 50px 0px 0px / 50px 50px 0px 0px;
   background-color: #3ab9fc;
   z-index: 2;
@@ -150,13 +150,14 @@ const BodyLineContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 520px;
-  height: 720px;
+  width: 90%;
+  height: 95%;
   border: solid 3px #ffffff;
   border-bottom: none;
   border-radius: 20px 20px 0px 0px / 20px 20px 0px 0px;
   background-color: #3ab9fc;
 `;
+
 const ContentsContainer = styled.div`
   display: flex;
   justify-content: center;

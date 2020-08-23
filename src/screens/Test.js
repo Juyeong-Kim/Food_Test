@@ -26,6 +26,10 @@ const QUESTION_LIST = [
   "20. 규칙적인 운동을 거의 하지 않는다.",
 ];
 
+const ANSWER_LIST = [
+  { answer1: "2일 이하", answer2: "3~5일", answer3: "6~7일" },
+  { answer1: "예", answer2: "가끔", answer3: "아니오" },
+];
 export default class Test extends React.Component {
   constructor(props) {
     super(props);
@@ -37,6 +41,12 @@ export default class Test extends React.Component {
   }
 
   render() {
+    const index = QUESTION_LIST.index;
+    const answerItem = this.getAnswer(index);
+    return <div className="get__test">{this.renderTest(answerItem)}</div>;
+  }
+
+  renderTest = (item) => {
     return (
       <TopContainer>
         <Header />
@@ -56,27 +66,35 @@ export default class Test extends React.Component {
                 this.onClickAnswer(1);
               }}
             >
-              <AnswerText>2일 이하</AnswerText>
+              <AnswerText>{item.answer1}</AnswerText>
             </AnswerBox>
             <AnswerBox
               onClick={() => {
                 this.onClickAnswer(2);
               }}
             >
-              <AnswerText>3일~5일</AnswerText>
+              <AnswerText>{item.answer2}</AnswerText>
             </AnswerBox>
             <AnswerBox
               onClick={() => {
                 this.onClickAnswer(3);
               }}
             >
-              <AnswerText>6일~7일</AnswerText>
+              <AnswerText>{item.answer3}</AnswerText>
             </AnswerBox>
           </AnswerContainer>
         </TestContainer>
       </TopContainer>
     );
-  }
+  };
+
+  getAnswer = (index) => {
+    if (index <= 10) {
+      return ANSWER_LIST[0];
+    } else {
+      return ANSWER_LIST[1];
+    }
+  };
 
   onClickAnswer = (buttonIndex) => {
     this.sumScore(buttonIndex);
@@ -151,7 +169,7 @@ const AnswerContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 600px;
-  height: 450px;
+  height: 500px;
 `;
 
 const AnswerBox = styled.div`
@@ -159,7 +177,7 @@ const AnswerBox = styled.div`
   justify-content: center;
   align-items: center;
   width: 420px;
-  height: 90px;
+  height: 100px;
   border-radius: 100px;
   border: solid 3px #ffdd33;
   cursor: pointer;

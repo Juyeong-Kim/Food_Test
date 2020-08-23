@@ -9,7 +9,7 @@ export default class Header extends React.Component {
       <HeaderContainer>
         <HeaderLogo>Wegram</HeaderLogo>
         <HomeButton>
-          <Link to="/home">
+          <Link to="/">
             <AiFillHome
               size={40}
               style={{
@@ -28,11 +28,11 @@ export default class Header extends React.Component {
 
 const HeaderContainer = styled.div`
   width: 600px;
-  height: 10px;
+  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  z-index: 1;
+  z-index: 3;
 `;
 
 const HeaderLogo = styled.span`
@@ -42,7 +42,7 @@ const HeaderLogo = styled.span`
   padding-top: 20px;
 `;
 
-const HomeButton = styled.button`
+const HomeButton = styled.div`
   border-width: 0;
   padding-right: 20px;
   padding-top: 20px;

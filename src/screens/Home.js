@@ -99,8 +99,8 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 600px;
   height: 216px;
+  width: 100%;
   z-index: 1;
 `;
 
