@@ -1,34 +1,26 @@
-import React from "react";
-import "./App.css";
-import Home from "./screens/Home";
-import Test from "./screens/Test";
-import Result from "./screens/Result";
-import styled from "styled-components";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <Container>
-        <BrowserRouter>
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/test" exact component={Test} />
-            <Route path="/result" exact component={Result} />
-            <Redirect path="*" to="/" />
-          </Switch>
-        </BrowserRouter>
-      </Container>
-    );
-  }
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
 }
 
-// AppStyled
-
-const Container = styled.section`
-  display: flex;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: #ebebeb;
-`;
+export default App;
